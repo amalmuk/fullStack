@@ -1,0 +1,168 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fc;
+  color: #172033;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 7%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #172033;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.brand-accent {
+  color: #4f46e5;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav a {
+  color: #667085;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #4f46e5;
+}
+
+.header-cta {
+  padding: 11px 17px;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header-cta:hover {
+  background: #3b5688;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 7%;
+  border-top: 1px solid #e8ebf2;
+  background: #ffffff;
+  color: #7b8497;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding: 18px 5%;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .header-cta {
+    padding: 10px 12px;
+  }
+
+  .site-footer {
+    padding: 20px 5%;
+  }
+}
+/* HOME PAGE */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 55px;
+  padding: 85px 9% 75px;
+  background:
+    radial-gradient(ellipse at 85% 15%, #e5e7ff 0, transparent 38%),
+    linear-gradient(135deg, #fbfcff, #f5f6ff);
+}
+
+.hero-content {
+  max-width: 640px;
+}
+
+.eyebrow {
+  color: #5145df;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 22px 0;
+  color: #172033;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 850;
+  letter-spacing: -2.5px;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: #5b50e8;
+}
+
+.hero-description {
+  max-width: 520px;
+  color: #667085;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}

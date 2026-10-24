@@ -1,0 +1,45 @@
+.home-page {
+min-height: 100vh;
+padding: 60px 20px;
+background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+font-family: Arial, sans-serif;
+}
+
+.home-card {
+max-width: 950px;
+margin: auto;
+padding: 50px 35px;
+background: white;
+border-radius: 20px;
+text-align: center;
+box-shadow: 0 10px 30px #1e40af20;
+}
+
+.home-card h1 {
+color: #1d4ed8;
+font-size: 38px;
+}
+
+.home-card p {
+color: #475569;
+font-size: 18px;
+line-height: 1.8;
+}
+
+.home-features {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+margin-top: 35px;
+}
+
+.home-feature {
+flex: 1;
+min-width: 180px;
+padding: 25px;
+background: #eff6ff;
+border-radius: 14px;
+color: #1e40af;
+}
+
