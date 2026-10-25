@@ -1,55 +1,73 @@
-
-import "./home.css";
 import Link from "next/link";
+import "./home.css";
+
+const pages = [
+  {
+    number: "01",
+    title: "Accueil",
+    description: "Découvrez notre application et ses fonctionnalités.",
+    href: "/",
+  },
+  {
+    number: "02",
+    title: "Connexion",
+    description: "Connectez-vous à votre espace personnel.",
+    href: "/login",
+  },
+  {
+    number: "03",
+    title: "Contact",
+    description: "Contactez-nous pour toute question ou information.",
+    href: "/contact",
+  },
+  {
+    number: "04",
+    title: "Utilisateurs",
+    description: "Consultez les utilisateurs grâce à notre API REST.",
+    href: "/users",
+  },
+];
 
 export default function HomePage() {
   return (
     <main className="home-page">
-      <nav className="home-navbar">
+      <nav className="home-nav">
         <Link href="/" className="home-logo">
-          <span className="logo-icon">✦</span>
-          FullStack
+          <span className="logo-icon">N</span>
+          <span>Next<span className="logo-highlight">App</span></span>
         </Link>
 
-        <div className="home-nav-links">
-          <Link href="/" className="nav-link active">
-            Accueil
-          </Link>
-          <Link href="/login" className="nav-link">
-            Login
-          </Link>
-          <Link href="/contact" className="nav-link">
-            Contact
-          </Link>
+        <div className="nav-links">
+          <Link href="/">Accueil</Link>
+          <Link href="/login">Connexion</Link>
+          <Link href="/contact">Contact</Link>
         </div>
 
         <Link href="/login" className="nav-button">
-          Se connecter →
+          Commencer
         </Link>
       </nav>
 
-      <section className="home-hero">
+      <section className="hero-section">
         <div className="hero-content">
-          <span className="hero-badge">
-            ✨ Notre application Full Stack
+          <span className="hero-label">
+            ✦ Bienvenue sur notre plateforme
           </span>
 
           <h1>
-            Bienvenue dans votre
-            <span className="hero-highlight">
-              {" "}espace numérique.
-            </span>
+            Une application
+            <br />
+            <span>moderne et intuitive.</span>
           </h1>
 
           <p className="hero-description">
-            Découvrez notre application réalisée avec Next.js.
-            Une interface simple, moderne et intuitive pour
-            accéder facilement à nos différentes pages.
+            Découvrez une expérience web simple, élégante et efficace,
+            développée avec Next.js et une API REST.
           </p>
 
           <div className="hero-actions">
-            <Link href="/login" className="hero-primary">
-              Commencer maintenant →
+            <Link href="/users" className="hero-primary">
+              Découvrir les utilisateurs <span>→</span>
             </Link>
 
             <Link href="/contact" className="hero-secondary">
@@ -57,104 +75,97 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="hero-note">
-            <span className="status-dot"></span>
-            Projet réalisé dans le cadre du TP Full Stack
+          <div className="hero-stats">
+            <div>
+              <strong>Next.js</strong>
+              <span>Frontend</span>
+            </div>
+            <div>
+              <strong>Express</strong>
+              <span>Backend API</span>
+            </div>
+            <div>
+              <strong>REST</strong>
+              <span>Architecture</span>
+            </div>
           </div>
         </div>
 
         <div className="hero-visual">
-          <div className="visual-glow"></div>
+          <div className="visual-glow" />
 
           <div className="visual-card">
-            <div className="visual-top">
-              <div className="visual-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div className="visual-card-header">
+              <div className="window-dots">
+                <span />
+                <span />
+                <span />
               </div>
-              <span className="visual-label">MON ESPACE</span>
+              <span className="status-badge">● En ligne</span>
             </div>
 
-            <div className="visual-symbol">✦</div>
-
+            <div className="visual-icon">✦</div>
+            <p className="visual-eyebrow">VOTRE ESPACE DIGITAL</p>
             <h2>Tout au même endroit.</h2>
-            <p>
-              Une expérience fluide pour naviguer
-              entre les différentes fonctionnalités.
+            <p className="visual-text">
+              Une interface claire pour naviguer entre les différentes
+              fonctionnalités de votre application.
             </p>
 
-            <div className="visual-line"></div>
-
-            <div className="visual-feature">
-              <span className="feature-icon">01</span>
-              <span>Connexion simple</span>
-              <span className="feature-check">✓</span>
+            <div className="visual-progress">
+              <span />
             </div>
 
-            <div className="visual-feature">
-              <span className="feature-icon">02</span>
-              <span>Navigation intuitive</span>
-              <span className="feature-check">✓</span>
+            <div className="visual-card-footer">
+              <span>Application web</span>
+              <span>100%</span>
             </div>
+          </div>
 
-            <div className="visual-feature">
-              <span className="feature-icon">03</span>
-              <span>Interface moderne</span>
-              <span className="feature-check">✓</span>
-            </div>
+          <div className="floating-badge floating-top">
+            <span className="floating-symbol">✓</span>
+            Interface moderne
+          </div>
+
+          <div className="floating-badge floating-bottom">
+            <span className="floating-symbol">↗</span>
+            API connectée
           </div>
         </div>
       </section>
 
-      <section className="home-pages">
+      <section className="pages-section">
         <div className="section-heading">
-          <span className="section-eyebrow">EXPLOREZ</span>
-          <h2>Découvrez nos pages</h2>
+          <div>
+            <span className="section-label">EXPLORER</span>
+            <h2>Découvrez nos pages</h2>
+          </div>
           <p>
-            Accédez rapidement aux différentes sections
-            de notre application.
+            Retrouvez facilement les différentes fonctionnalités de
+            l’application.
           </p>
         </div>
 
         <div className="pages-grid">
-          <Link href="/" className="page-card">
-            <div className="page-card-icon icon-home">⌂</div>
-            <h3>Accueil</h3>
-            <p>
-              Retrouvez la présentation et les informations
-              principales de notre application.
-            </p>
-            <span className="card-link">Découvrir →</span>
-          </Link>
-
-          <Link href="/login" className="page-card">
-            <div className="page-card-icon icon-login">↗</div>
-            <h3>Connexion</h3>
-            <p>
-              Accédez à la page de connexion de votre
-              espace personnel.
-            </p>
-            <span className="card-link">Se connecter →</span>
-          </Link>
-
-          <Link href="/contact" className="page-card">
-            <div className="page-card-icon icon-contact">✉</div>
-            <h3>Contact</h3>
-            <p>
-              Retrouvez notre page de contact pour
-              nous envoyer vos questions.
-            </p>
-            <span className="card-link">Nous contacter →</span>
-          </Link>
+          {pages.map((page) => (
+            <Link href={page.href} className="page-card" key={page.number}>
+              <span className="page-number">{page.number}</span>
+              <div className="page-card-arrow">↗</div>
+              <h3>{page.title}</h3>
+              <p>{page.description}</p>
+              <span className="page-card-link">Découvrir <span>→</span></span>
+            </Link>
+          ))}
         </div>
       </section>
 
       <footer className="home-footer">
-        <Link href="/" className="footer-logo">
-          ✦ FullStack
+        <Link href="/" className="home-logo footer-logo">
+          <span className="logo-icon">N</span>
+          <span>Next<span className="logo-highlight">App</span></span>
         </Link>
-        <p>© 2026 — Application réalisée dans le cadre du TP.</p>
+        <p>© 2026 NextApp — Projet Full Stack.</p>
+        <Link href="/contact">Besoin d’aide ?</Link>
       </footer>
     </main>
   );
