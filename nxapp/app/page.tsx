@@ -133,6 +133,50 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <section className="services-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-label">NOS SERVICES</span>
+            <h2>Ce que nous proposons</h2>
+          </div>
+          <p>
+            Les fonctionnalités principales de notre application Full Stack.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          <article className="service-card">
+            <div className="service-icon">⚡</div>
+            <h3>Interface moderne</h3>
+            <p>
+              Une interface claire et responsive développée avec Next.js
+              pour faciliter la navigation.
+            </p>
+          </article>
+
+          <article className="service-card">
+            <div className="service-icon">🔗</div>
+            <h3>API REST</h3>
+            <p>
+              Une API Express permettant de récupérer, ajouter, modifier
+              et supprimer les utilisateurs.
+            </p>
+          </article>
+
+          <article className="service-card">
+            <div className="service-icon">👥</div>
+            <h3>Gestion des utilisateurs</h3>
+            <p>
+              Consultez les utilisateurs et visualisez les données
+              récupérées depuis notre backend.
+            </p>
+            <Link href="/users" className="service-link">
+              Voir les utilisateurs →
+            </Link>
+          </article>
+        </div>
+      </section>
+
 
       <section className="pages-section">
         <div className="section-heading">
