@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #f97316;
+  --color-primary-dark: #c2410c;
+  --color-primary-light: #ffedd5;
+  --color-background: #fff7ed;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --color-border: #fed7aa;
+  --color-success: #15803d;
+  --color-danger: #b91c1c;
+  --shadow-card: 0 18px 45px rgba(124, 45, 18, 0.08);
+  --radius-card: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+::selection {
+  color: #7c2d12;
+  background: #fed7aa;
+}
+
+:focus-visible {
+  outline: 3px solid #fb923c;
+  outline-offset: 3px;
+}
