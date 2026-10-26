@@ -1,6 +1,10 @@
+
 <main class="home-page">
+
+  <!-- HERO SECTION -->
   <section class="home-hero">
     <div class="home-container hero-grid">
+
       <div class="hero-content">
         <span class="hero-badge">
           <span>✦</span>
@@ -23,6 +27,7 @@
           <a class="btn-primary" routerLink="/login">
             Get started <span>→</span>
           </a>
+
           <a class="btn-secondary" routerLink="/contact">
             Contact us
           </a>
@@ -37,6 +42,7 @@
 
       <div class="hero-visual">
         <div class="visual-card">
+
           <div class="visual-top">
             <div class="visual-brand">
               <div class="visual-icon">F</div>
@@ -45,6 +51,7 @@
                 <small>Project workspace</small>
               </div>
             </div>
+
             <span class="visual-status">● Online</span>
           </div>
 
@@ -57,6 +64,7 @@
               <strong>03</strong>
               <small>Home · Login · Contact</small>
             </div>
+
             <div class="metric-box">
               <span>Design quality</span>
               <strong>100%</strong>
@@ -69,6 +77,7 @@
               <span>Project overview</span>
               <strong>In progress</strong>
             </div>
+
             <div class="progress-track">
               <div class="progress-fill"></div>
             </div>
@@ -76,31 +85,161 @@
         </div>
 
         <div class="floating-note">
-          ✦ Modern interface
-          <span>Designed with Angular</span>
+          <span></span>
         </div>
       </div>
+
     </div>
   </section>
 
+  <!-- STATISTICS -->
   <section class="stats-section">
     <div class="home-container stats-grid">
+
       <div class="stat-item">
         <strong>03</strong>
         <span>Essential pages</span>
       </div>
+
       <div class="stat-item">
         <strong>01</strong>
         <span>Unified experience</span>
       </div>
+
       <div class="stat-item">
         <strong>∞</strong>
         <span>Ideas to explore</span>
       </div>
+
     </div>
   </section>
 
+  <!-- FEATURES -->
   <section class="features-section">
     <div class="home-container">
+
       <div class="section-heading">
-        <span class="section-label">EXP
+        <span class="section-label">EXPLORE OUR PROJECT</span>
+        <h2>A modern full stack experience</h2>
+        <p>
+          Discover the main features of our Angular application.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <article class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Modern Design</h3>
+          <p>
+            A clean and responsive interface with a professional
+            orange visual identity.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Angular Frontend</h3>
+          <p>
+            A dynamic frontend with reusable components and
+            smooth navigation.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3>Express API</h3>
+          <p>
+            Connect the frontend to a backend server using REST API
+            requests.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS FROM EXPRESS API -->
+  <section class="api-products">
+    <div class="home-container">
+
+      <div class="section-heading">
+        <span class="section-label">BACKEND INTEGRATION</span>
+        <h2>Products from API</h2>
+        <p>
+          These products are loaded dynamically from our Express server.
+        </p>
+      </div>
+
+      <div class="api-status">
+        <span class="status-dot"></span>
+        Express API · localhost:3000
+      </div>
+
+      <div class="loading-message" *ngIf="chargement">
+        Loading products...
+      </div>
+
+      <div class="error-message" *ngIf="erreur">
+        {{ erreur }}
+      </div>
+
+      <div class="products-grid" *ngIf="!chargement && !erreur">
+
+        <article
+          class="product-card"
+          *ngFor="let produit of produits"
+        >
+          <div class="product-icon">📦</div>
+
+          <span class="product-id">
+            PRODUCT #{{ produit.id }}
+          </span>
+
+          <h3>{{ produit.nom }}</h3>
+
+          <div class="product-price">
+            {{ produit.prix }} <span>DT</span>
+          </div>
+
+          <div class="product-footer">
+            <span class="available-dot"></span>
+            Loaded from API
+          </div>
+        </article>
+
+      </div>
+
+      <p
+        class="empty-message"
+        *ngIf="!chargement && !erreur && produits.length === 0"
+      >
+        No products available.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="cta-section">
+    <div class="home-container cta-content">
+
+      <span class="section-label">KEEP BUILDING</span>
+
+      <h2>Your next idea starts here.</h2>
+
+      <p>
+        Explore the application and discover how frontend and backend
+        technologies work together.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" routerLink="/contact">
+          Contact us <span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
