@@ -1,3 +1,4 @@
+
 <main class="login-page">
   <a class="brand" routerLink="/">
     <span class="brand-icon">F</span>
@@ -68,15 +69,24 @@
       </div>
 
       @if (errorMessage) {
-        <p class="feedback error" role="alert">{{ errorMessage }}</p>
+        <p class="feedback error" role="alert">
+          {{ errorMessage }}
+        </p>
+      }
+
+      @if (successMessage) {
+        <p class="feedback success" role="status">
+          {{ successMessage }}
+        </p>
       }
 
       <button
         class="submit-button"
         type="submit"
-        [disabled]="loginForm.invalid"
+        [disabled]="isLoading"
       >
-        Se connecter <span>→</span>
+        {{ isLoading ? 'Connexion...' : 'Se connecter' }}
+        <span>→</span>
       </button>
     </form>
 

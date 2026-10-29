@@ -20,7 +20,7 @@ export class Login {
 
   constructor(private router: Router) {}
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     this.errorMessage = '';
     this.successMessage = '';
 
@@ -29,47 +29,64 @@ export class Login {
       return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email.trim())) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(this.email.trim())) {
       this.errorMessage = 'Veuillez saisir une adresse e-mail valide.';
       return;
     }
 
     this.isLoading = true;
 
-    fetch('https://tp3-backend-amal.onrender.com/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: this.email.trim(),
-        password: this.password,
-      }),
-    })
-      .then(async (response) => {
-        const data = await response.json();
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
 
-        if (!response.ok) {
-          throw new Error(
-            data.erreur || data.message || 'Échec de connexion.'
-          );
+    try {
+      const response = await fetch(
+        'https://tp3-backend-amal.onrender.com/api/auth/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: this.email.trim(),
+            password: this.password,
+          }),
+          signal: controller.signal,
         }
+      );
 
-        if (!data.token) {
-          throw new Error('Token JWT manquant dans la réponse.');
-        }
+      const data = await response.json();
 
-        sessionStorage.setItem('token', data.token);
+      if (!response.ok) {
+        throw new Error(
+          data.erreur || data.message || 'Échec de connexion.'
+        );
+      }
 
-        this.successMessage = 'Connexion réussie !';
-        await this.router.navigate(['/']);
-      })
-      .catch((error: Error) => {
+      if (!data.token) {
+        throw new Error('Token JWT manquant dans la réponse.');
+      }
+
+      sessionStorage.setItem('token', data.token);
+      this.successMessage = 'Connexion réussie !';
+
+      await this.router.navigate(['/']);
+
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
         this.errorMessage =
-          error.message || 'Impossible de contacter le serveur.';
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+          'Le serveur ne répond pas. Réessayez dans quelques instants.';
+      } else {
+        this.errorMessage =
+          error instanceof Error
+            ? error.message
+            : 'Impossible de contacter le serveur.';
+      }
+    } finally {
+      clearTimeout(timeout);
+      this.isLoading = false;
+    }
   }
 }
