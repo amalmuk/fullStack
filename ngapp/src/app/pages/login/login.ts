@@ -36,7 +36,7 @@ export class Login {
 
     this.isLoading = true;
 
-    fetch('http://localhost:3001/api/auth/login', {
+    fetch('https://tp3-backend-amal.onrender.com/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -35,7 +35,7 @@ export class Home implements OnInit {
       }
 
       const response = await fetch(
-        'http://localhost:3001/api/produits',
+        'https://tp3-backend-amal.onrender.com/api/produits',
         {
           method: 'GET',
           headers: {
