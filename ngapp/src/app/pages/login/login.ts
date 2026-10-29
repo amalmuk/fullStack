@@ -1,6 +1,7 @@
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,9 @@ export class Login {
   showPassword = false;
   errorMessage = '';
   successMessage = '';
+  isLoading = false;
+
+  constructor(private router: Router) {}
 
   onSubmit(): void {
     this.errorMessage = '';
@@ -25,12 +29,47 @@ export class Login {
       return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email.trim())) {
       this.errorMessage = 'Veuillez saisir une adresse e-mail valide.';
       return;
     }
 
-    this.errorMessage =
-      'Authentification non configurée. Connectez un backend pour continuer.';
+    this.isLoading = true;
+
+    fetch('http://localhost:3001/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: this.email.trim(),
+        password: this.password,
+      }),
+    })
+      .then(async (response) => {
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            data.erreur || data.message || 'Échec de connexion.'
+          );
+        }
+
+        if (!data.token) {
+          throw new Error('Token JWT manquant dans la réponse.');
+        }
+
+        sessionStorage.setItem('token', data.token);
+
+        this.successMessage = 'Connexion réussie !';
+        await this.router.navigate(['/']);
+      })
+      .catch((error: Error) => {
+        this.errorMessage =
+          error.message || 'Impossible de contacter le serveur.';
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
   }
 }

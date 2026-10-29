@@ -173,7 +173,7 @@
 
       <div class="api-status">
         <span class="status-dot"></span>
-        Express API · localhost:3000
+        Express API · localhost:3001
       </div>
 
       <div class="loading-message" *ngIf="chargement">
@@ -191,10 +191,6 @@
           *ngFor="let produit of produits"
         >
           <div class="product-icon">📦</div>
-
-          <span class="product-id">
-            PRODUCT #{{ produit.id }}
-          </span>
 
           <h3>{{ produit.nom }}</h3>
 

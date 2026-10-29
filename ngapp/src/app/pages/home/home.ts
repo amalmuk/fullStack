@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 interface Produit {
-  id: number;
+  _id: string;
   nom: string;
   prix: number;
 }
@@ -20,16 +20,36 @@ export class Home implements OnInit {
   produits: Produit[] = [];
   erreur = '';
   chargement = true;
-constructor(private cdr: ChangeDetectorRef) {}
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
   async ngOnInit(): Promise<void> {
     console.log('Chargement des produits...');
 
     try {
+      const token = sessionStorage.getItem('token');
+      console.log('Token présent :', !!token);
+
+      if (!token) {
+        throw new Error('Token JWT absent. Veuillez vous connecter.');
+      }
+
       const response = await fetch(
-        'http://localhost:3000/api/produits'
+        'http://localhost:3001/api/produits',
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       console.log('Réponse API :', response.status);
+
+      if (response.status === 401) {
+        sessionStorage.removeItem('token');
+        throw new Error('Session invalide. Veuillez vous reconnecter.');
+      }
 
       if (!response.ok) {
         throw new Error(`Erreur HTTP : ${response.status}`);
@@ -37,15 +57,18 @@ constructor(private cdr: ChangeDetectorRef) {}
 
       const data: Produit[] = await response.json();
 
-      console.log('Produits reçus :', data);
+      if (!Array.isArray(data)) {
+        throw new Error('La réponse API ne contient pas une liste de produits.');
+      }
 
+      console.log('Produits reçus :', data);
       this.produits = data;
-      console.log('Nombre de produits :', this.produits.length);
-      this.cdr.detectChanges();
     } catch (error) {
       console.error('Erreur API :', error);
       this.erreur =
-        'Impossible de charger les produits. Vérifiez le serveur Express.';
+        error instanceof Error
+          ? error.message
+          : 'Erreur inconnue lors du chargement.';
     } finally {
       this.chargement = false;
       this.cdr.detectChanges();
