@@ -1,88 +1,108 @@
-# Ngapp — Application Full Stack Angular + Express
+
+# FullStackPro - TP3
 
 ## 1. Présentation du projet
 
-Ce projet a été réalisé dans le cadre du TP2 de développement Full Stack.
+FullStackPro est une application Web Full Stack développée
+dans le cadre du TP3.
 
-Il consiste à développer une application web avec :
-- **Frontend :** Angular
-- **Backend :** Node.js et Express
-- **Communication :** API REST avec JSON et Fetch API
+Le projet permet de gérer des produits et des utilisateurs
+avec une interface Angular, un serveur Express et une base
+de données MongoDB.
 
-L'application permet de consulter et de gérer une liste de produits.
+## 2. Technologies utilisées
 
-## 2. Prérequis
+### Frontend
+- Angular
+- TypeScript
+- HTML
+- CSS
 
-Avant de lancer le projet, il faut installer :
-- Node.js et npm
-- Angular CLI
-- Un navigateur web
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcryptjs
 
-## 3. Installation
+### Déploiement
+- Render
+- Docker
+- Docker Compose
 
-Ouvrir un terminal dans le dossier du projet et exécuter :
+## 3. Architecture du projet
+
+- Frontend : application Angular
+- Backend : API REST avec Express
+- Database : MongoDB Atlas
+- Authentication : JWT
+
+## 4. Fonctionnalités principales
+
+- Page d'accueil
+- Page de connexion
+- Page de contact
+- Inscription des utilisateurs
+- Authentification avec JWT
+- Affichage des produits
+- Ajout de produits
+- Modification de produits
+- Suppression de produits
+- Protection des routes avec JWT
+
+## 5. API REST
+
+| Méthode | Route | Description |
+|---|---|---|
+| POST | /api/auth/register | Inscription |
+| POST | /api/auth/login | Connexion |
+| GET | /api/produits | Liste des produits |
+| GET | /api/produits/:id | Détail produit |
+| POST | /api/produits | Ajouter produit |
+| PUT | /api/produits/:id | Modifier produit |
+| DELETE | /api/produits/:id | Supprimer produit |
+
+Les routes produits nécessitent un token JWT.
+
+## 6. Installation
+
+Installer les dépendances du frontend :
 
 ```bash
 npm install
 ```
 
-## 4. Lancement du backend
-
-Dans un premier terminal :
+Installer les dépendances du backend :
 
 ```bash
-node backend/server.js
+cd backend
+npm install
 ```
 
-Le serveur Express fonctionne sur :
+## 7. Configuration
 
-`http://localhost:3000`
+Créer un fichier `.env` dans le dossier backend :
 
-## 5. Lancement du frontend
-
-Dans un deuxième terminal, à la racine du projet :
-
-```bash
-npm start
+```env
+PORT=3001
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 ```
 
-Ouvrir ensuite le navigateur à l'adresse :
+Ne jamais publier le fichier `.env` sur GitHub.
 
-`http://localhost:4200`
+## 8. Déploiement
 
-## 6. Routes de l'API REST
+Frontend :
+https://tp3-frontend-amal.onrender.com
 
-| Méthode | Route | Description |
-|---|---|---|
-| GET | `/api/produits` | Récupérer tous les produits |
-| GET | `/api/produits/:id` | Récupérer un produit par son identifiant |
-| POST | `/api/produits` | Ajouter un produit |
-| PUT | `/api/produits/:id` | Modifier un produit |
-| DELETE | `/api/produits/:id` | Supprimer un produit |
+Backend :
+https://tp3-backend-amal.onrender.com
 
-## 7. Validation et gestion des erreurs
+## 9. Conclusion
 
-L'API vérifie les données envoyées lors de l'ajout et de la modification d'un produit.
-
-- **400 Bad Request :** données invalides.
-- **404 Not Found :** produit ou route introuvable.
-
-Les données sont échangées au format JSON.
-
-## 8. Tests de l'API
-
-Les routes ont été testées avec PowerShell à l'aide de requêtes HTTP.
-
-Les tests réalisés comprennent :
-- Consultation de la liste des produits.
-- Ajout, modification et suppression d'un produit.
-- Vérification des données invalides.
-- Vérification des produits inexistants et des routes inconnues.
-
-## 9. Remarque
-
-Les produits sont stockés en mémoire dans le serveur. Les modifications effectuées sont donc réinitialisées lorsque le backend redémarre.
-
-## 10. Auteur
-
-Projet réalisé dans le cadre du TP2 — Développement Full Stack.
+Ce projet permet de mettre en pratique le développement
+Full Stack, la création d'une API REST, la gestion d'une
+base de données MongoDB et l'authentification sécurisée
+avec JWT.
