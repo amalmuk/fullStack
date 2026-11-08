@@ -7,26 +7,26 @@ export const routes: Routes = [
     path: '',
     component: Home,
     canActivate: [authGuard],
-    title: 'Home | FullStackPro',
+    title: 'Accueil | TeknoShop',
   },
   {
     path: 'services',
     loadComponent: () =>
       import('./pages/services/services').then((m) => m.Services),
     canActivate: [authGuard],
-    title: 'Services | FullStackPro',
+    title: 'Services | TeknoShop',
   },
   {
     path: 'login',
     loadComponent: () =>
       import('./pages/login/login').then((m) => m.Login),
-    title: 'Login | FullStackPro',
+    title: 'Connexion | TeknoShop',
   },
   {
     path: 'contact',
     loadComponent: () =>
       import('./pages/contact/contact').then((m) => m.Contact),
-    title: 'Contact | FullStackPro',
+    title: 'Contact | TeknoShop',
   },
   {
     path: '**',

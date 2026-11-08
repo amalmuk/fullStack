@@ -13,10 +13,14 @@ import { Router, RouterLink } from '@angular/router';
 export class Login {
   email = '';
   password = '';
+
   showPassword = false;
   errorMessage = '';
   successMessage = '';
   isLoading = false;
+
+  private readonly apiUrl =
+    'https://tp3-backend-amal.onrender.com/api/auth/login';
 
   constructor(private router: Router) {}
 
@@ -24,15 +28,18 @@ export class Login {
     this.errorMessage = '';
     this.successMessage = '';
 
+    // Vérification des champs
     if (!this.email.trim() || !this.password) {
       this.errorMessage = 'Veuillez remplir tous les champs.';
       return;
     }
 
+    // Vérification de l'adresse e-mail
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(this.email.trim())) {
-      this.errorMessage = 'Veuillez saisir une adresse e-mail valide.';
+      this.errorMessage =
+        'Veuillez saisir une adresse e-mail valide.';
       return;
     }
 
@@ -42,36 +49,40 @@ export class Login {
     const timeout = setTimeout(() => controller.abort(), 60000);
 
     try {
-      const response = await fetch(
-        'https://tp3-backend-amal.onrender.com/api/auth/login',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: this.email.trim(),
-            password: this.password,
-          }),
-          signal: controller.signal,
-        }
-      );
+      const response = await fetch(this.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: this.email.trim(),
+          password: this.password,
+        }),
+        signal: controller.signal,
+      });
 
       const data = await response.json();
 
       if (!response.ok) {
         throw new Error(
-          data.erreur || data.message || 'Échec de connexion.'
+          data.erreur ||
+          data.message ||
+          'Échec de connexion. Vérifiez vos identifiants.'
         );
       }
 
       if (!data.token) {
-        throw new Error('Token JWT manquant dans la réponse.');
+        throw new Error(
+          'Le serveur n’a pas retourné de token JWT.'
+        );
       }
 
+      // Enregistrement du token
       sessionStorage.setItem('token', data.token);
+
       this.successMessage = 'Connexion réussie !';
 
+      // Redirection vers la page d'accueil
       await this.router.navigate(['/']);
 
     } catch (error) {

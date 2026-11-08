@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })
@@ -18,7 +19,6 @@ export class Contact {
   feedbackType: 'success' | 'error' | '' = '';
 
   onSubmit(): void {
-
     this.feedback = '';
     this.feedbackType = '';
 
