@@ -1,27 +1,64 @@
+
 <div class="app-shell">
+
+  <!-- EN-TÊTE -->
   <header class="site-header">
+
     <a class="brand" routerLink="/">
-      <span class="brand-icon">F</span>
-      <span>FullStack<span class="brand-accent">Pro</span></span>
+      <span class="brand-icon">T</span>
+      <span>Tekno<span class="brand-accent">Shop</span></span>
     </a>
 
     <nav class="main-nav" aria-label="Navigation principale">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        Home
+
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Accueil
       </a>
-      <a routerLink="/login" routerLinkActive="active">Login</a>
-      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+
+      <a routerLink="/services" routerLinkActive="active">
+        Services
+      </a>
+
+      <a routerLink="/login" routerLinkActive="active">
+        Connexion
+      </a>
+
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact
+      </a>
+
     </nav>
 
-    <a class="header-cta" routerLink="/contact">Get in touch <span>↗️</span></a>
+    <a class="header-cta" routerLink="/services">
+      Découvrir la boutique <span>→</span>
+    </a>
+
   </header>
 
+
+  <!-- CONTENU DES PAGES -->
   <main class="page-content">
     <router-outlet />
   </main>
 
+
+  <!-- PIED DE PAGE -->
   <footer class="site-footer">
-    <span>© 2026 FullStackPro</span>
-    <span>Built with Angular</span>
+
+    <div class="footer-brand">
+      <span class="brand-icon">T</span>
+      <strong>Tekno<span class="brand-accent">Shop</span></strong>
+    </div>
+
+    <p>
+      Votre destination pour des accessoires mobiles de qualité.
+    </p>
+
+    <span>© 2026 TeknoShop. Tous droits réservés.</span>
+
   </footer>
+
 </div>

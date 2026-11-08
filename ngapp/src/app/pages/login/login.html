@@ -1,17 +1,14 @@
 
 <main class="login-page">
   <a class="brand" routerLink="/">
-    <span class="brand-icon">F</span>
-    <span>FullStackPro</span>
+    <span class="brand-icon">T</span>
+    <span>TeknoShop</span>
   </a>
 
   <section class="login-card">
-    <div class="welcome-icon">✦</div>
-
-    <p class="eyebrow">WELCOME BACK</p>
     <h1>Content de vous revoir</h1>
     <p class="subtitle">
-      Connectez-vous à votre espace de travail.
+      Connectez-vous à votre espace TeknoShop.
     </p>
 
     <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
@@ -22,7 +19,7 @@
           type="email"
           name="email"
           [(ngModel)]="email"
-          placeholder="vous@entreprise.com"
+          placeholder="vous@exemple.com"
           autocomplete="email"
           required
           email
@@ -31,7 +28,7 @@
 
         @if (emailField.invalid && emailField.touched) {
           <small class="field-error">
-            Saisissez une adresse e-mail valide.
+            Veuillez saisir une adresse e-mail valide.
           </small>
         }
       </div>
@@ -63,7 +60,7 @@
 
         @if (passwordField.invalid && passwordField.touched) {
           <small class="field-error">
-            Le mot de passe est obligatoire.
+            Veuillez saisir votre mot de passe.
           </small>
         }
       </div>
@@ -85,16 +82,14 @@
         type="submit"
         [disabled]="isLoading"
       >
-        {{ isLoading ? 'Connexion...' : 'Se connecter' }}
+        {{ isLoading ? 'Connexion en cours...' : 'Se connecter' }}
         <span>→</span>
       </button>
     </form>
 
     <p class="bottom-text">
-      Vous découvrez FullStackPro ?
+      Besoin d'aide ?
       <a routerLink="/contact">Contactez-nous</a>
     </p>
   </section>
-
-  <footer></footer>
 </main>

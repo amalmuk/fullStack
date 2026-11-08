@@ -1,183 +1,206 @@
-
-<main class="home-page">
+ <main class="home-page">
 
   <!-- HERO SECTION -->
   <section class="home-hero">
     <div class="home-container hero-grid">
 
       <div class="hero-content">
+
         <span class="hero-badge">
-          <span>✦</span>
-          YOUR FULL STACK JOURNEY STARTS HERE
+          BIENVENUE CHEZ TEKNOSHOP
         </span>
 
         <h1>
-          Build your ideas.<br />
-          <span>Bring them to life.</span>
+          Améliorez votre<br>
+          <span>expérience mobile.</span>
         </h1>
 
         <p class="hero-description">
-          Welcome to FullStackPro, a modern web application designed to
-          explore navigation, user interfaces and full stack development
-          with Angular. Discover a clean, responsive and professional
-          digital experience.
+          Bienvenue chez TeknoShop ! Découvrez nos coques élégantes,
+          nos chargeurs rapides, nos accessoires audio de qualité
+          et nos batteries externes performantes.
+          Tout ce dont votre smartphone a besoin en un seul endroit.
         </p>
 
         <div class="hero-actions">
-          <a class="btn-primary" routerLink="/login">
-            Get started <span>→</span>
+          <a class="btn-primary" routerLink="/services">
+            Découvrir la collection <span>→</span>
           </a>
 
           <a class="btn-secondary" routerLink="/contact">
-            Contact us
+            Nous contacter
           </a>
         </div>
 
         <div class="hero-trust">
-          <span>Modern interface</span>
-          <span>Responsive design</span>
-          <span>Angular powered</span>
+          <span>✓ Produits de qualité</span>
+          <span>✓ Designs modernes</span>
+          <span>✓ Prix avantageux</span>
         </div>
+
       </div>
 
       <div class="hero-visual">
-        <div class="visual-card">
 
-          <div class="visual-top">
-            <div class="visual-brand">
-              <div class="visual-icon">F</div>
-              <div>
-                <strong>FullStackPro</strong>
-                <small>Project workspace</small>
-              </div>
-            </div>
+        <div class="hero-image-card">
+          <img
+            src="/products/cases/case1.jpg"
+            alt="Accessoires pour smartphones TeknoShop"
+          >
 
-            <span class="visual-status">● Online</span>
-          </div>
-
-          <h3>Everything starts with an idea.</h3>
-          <p>Turn your ideas into a beautiful digital experience.</p>
-
-          <div class="visual-metrics">
-            <div class="metric-box">
-              <span>Application pages</span>
-              <strong>03</strong>
-              <small>Home · Login · Contact</small>
-            </div>
-
-            <div class="metric-box">
-              <span>Design quality</span>
-              <strong>100%</strong>
-              <small>Built for learning</small>
-            </div>
-          </div>
-
-          <div class="visual-progress">
-            <div class="progress-heading">
-              <span>Project overview</span>
-              <strong>In progress</strong>
-            </div>
-
-            <div class="progress-track">
-              <div class="progress-fill"></div>
-            </div>
+          <div class="hero-image-overlay">
+            <span>COLLECTION TEKNOSHOP</span>
+            <h3>Le style rencontre la technologie.</h3>
           </div>
         </div>
 
         <div class="floating-note">
-          <span></span>
+          <span class="floating-icon">🎧</span>
+          <div>
+            <strong>Les indispensables high-tech</strong>
+            <small>Tout au même endroit</small>
+          </div>
         </div>
+
       </div>
 
     </div>
   </section>
+
 
   <!-- STATISTICS -->
   <section class="stats-section">
     <div class="home-container stats-grid">
 
       <div class="stat-item">
-        <strong>03</strong>
-        <span>Essential pages</span>
-      </div>
-
-      <div class="stat-item">
         <strong>01</strong>
-        <span>Unified experience</span>
+        <span>Accessoires de qualité</span>
       </div>
 
       <div class="stat-item">
-        <strong>∞</strong>
-        <span>Ideas to explore</span>
+        <strong>02</strong>
+        <span>Collections modernes</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>03</strong>
+        <span>Prix abordables</span>
       </div>
 
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features-section">
+
+  <!-- CATEGORIES -->
+  <section class="categories-section">
     <div class="home-container">
 
       <div class="section-heading">
-        <span class="section-label">EXPLORE OUR PROJECT</span>
-        <h2>A modern full stack experience</h2>
+        <span class="section-label">EXPLOREZ TEKNOSHOP</span>
+        <h2>Nos catégories</h2>
         <p>
-          Discover the main features of our Angular application.
+          Trouvez les accessoires idéaux pour votre smartphone.
         </p>
       </div>
 
-      <div class="features-grid">
+      <div class="categories-grid">
 
-        <article class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Modern Design</h3>
-          <p>
-            A clean and responsive interface with a professional
-            orange visual identity.
-          </p>
+        <!-- PHONE CASES -->
+        <article class="category-card">
+          <div class="category-image">
+            <img
+              src="/products/cases/case1.jpg"
+              alt="Coques de téléphone"
+            >
+          </div>
+
+          <div class="category-content">
+            <h3>Coques de téléphone</h3>
+            <p>Protégez votre téléphone avec élégance.</p>
+            <a routerLink="/services">Découvrir →</a>
+          </div>
         </article>
 
-        <article class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Angular Frontend</h3>
-          <p>
-            A dynamic frontend with reusable components and
-            smooth navigation.
-          </p>
+        <!-- CHARGERS -->
+        <article class="category-card">
+          <div class="category-image">
+            <img
+              src="/products/chargers/charger1.jpg"
+              alt="Chargeurs et câbles"
+            >
+          </div>
+
+          <div class="category-content">
+            <h3>Chargeurs et câbles</h3>
+            <p>Rechargez vos appareils rapidement.</p>
+            <a routerLink="/services">Découvrir →</a>
+          </div>
         </article>
 
-        <article class="feature-card">
-          <div class="feature-icon">🔗</div>
-          <h3>Express API</h3>
-          <p>
-            Connect the frontend to a backend server using REST API
-            requests.
-          </p>
+        <!-- AUDIO -->
+        <article class="category-card">
+          <div class="category-image">
+            <img
+              src="/products/audio/audio1.jpg"
+              alt="Accessoires audio"
+            >
+          </div>
+
+          <div class="category-content">
+            <h3>Accessoires audio</h3>
+            <p>Profitez pleinement de votre musique.</p>
+            <a routerLink="/services">Découvrir →</a>
+          </div>
+        </article>
+
+        <!-- POWER BANKS -->
+        <article class="category-card">
+          <div class="category-image">
+            <img
+              src="/products/powerbanks/powerbank1.jpg"
+              alt="Batteries externes"
+            >
+          </div>
+
+          <div class="category-content">
+            <h3>Batteries externes</h3>
+            <p>Restez connecté où que vous soyez.</p>
+            <a routerLink="/services">Découvrir →</a>
+          </div>
         </article>
 
       </div>
+
+      <div class="categories-action">
+        <a routerLink="/services" class="btn-primary">
+          Voir tous les produits →
+        </a>
+      </div>
+
     </div>
   </section>
+
 
   <!-- PRODUCTS FROM EXPRESS API -->
   <section class="api-products">
     <div class="home-container">
 
       <div class="section-heading">
-        <span class="section-label">BACKEND INTEGRATION</span>
-        <h2>Products from API</h2>
+        <span class="section-label">NOTRE SÉLECTION</span>
+        <h2>Nos produits phares</h2>
         <p>
-          These products are loaded dynamically from our Express server.
+          Découvrez les produits chargés dynamiquement
+          depuis l'API de notre application.
         </p>
       </div>
 
       <div class="api-status">
         <span class="status-dot"></span>
-        Express API · tp3-backend-amal.onrender.com
+        API Express TeknoShop
       </div>
 
       <div class="loading-message" *ngIf="chargement">
-        Loading products...
+        Chargement des produits...
       </div>
 
       <div class="error-message" *ngIf="erreur">
@@ -190,7 +213,8 @@
           class="product-card"
           *ngFor="let produit of produits"
         >
-          <div class="product-icon">📦</div>
+
+          <div class="product-icon">📱</div>
 
           <h3>{{ produit.nom }}</h3>
 
@@ -200,8 +224,9 @@
 
           <div class="product-footer">
             <span class="available-dot"></span>
-            Loaded from API
+            Disponible
           </div>
+
         </article>
 
       </div>
@@ -210,28 +235,32 @@
         class="empty-message"
         *ngIf="!chargement && !erreur && produits.length === 0"
       >
-        No products available.
+        Aucun produit disponible pour le moment.
       </p>
 
     </div>
   </section>
 
+
   <!-- CALL TO ACTION -->
   <section class="cta-section">
     <div class="home-container cta-content">
 
-      <span class="section-label">KEEP BUILDING</span>
+      <span class="section-label">TEKNOSHOP</span>
 
-      <h2>Your next idea starts here.</h2>
+      <h2>
+        La technologie commence avec les bons accessoires.
+      </h2>
 
       <p>
-        Explore the application and discover how frontend and backend
-        technologies work together.
+        Offrez à votre smartphone la protection, la puissance
+        et le style qu'il mérite. Découvrez dès maintenant
+        toute la collection TeknoShop.
       </p>
 
       <div class="hero-actions">
-        <a class="btn-primary" routerLink="/contact">
-          Contact us <span>→</span>
+        <a class="btn-primary" routerLink="/services">
+          Découvrir notre collection →
         </a>
       </div>
 

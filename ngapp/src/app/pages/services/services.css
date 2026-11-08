@@ -1,0 +1,303 @@
+/* ==============================
+   TEKNOSHOP - SERVICES PAGE
+================================ */
+
+:host {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.services-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 65px 25px 80px;
+  color: #252525;
+}
+
+/* HERO */
+
+.services-hero {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 55px;
+}
+
+.section-label {
+  display: inline-block;
+  color: #f97316;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.services-hero h1 {
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 800;
+  margin: 8px 0 15px;
+  color: #252525;
+}
+
+.services-hero p {
+  color: #707070;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* SERVICES GRID */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+/* CATEGORY CARD */
+
+.feature-card {
+  min-width: 0;
+  background: #ffffff;
+  padding: 28px;
+  border: 1px solid #eeeeee;
+  border-radius: 20px;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.045);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* CATEGORY BUTTON */
+
+.service-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  background: #fff1e6;
+  border-radius: 16px;
+  font-size: 29px;
+}
+
+.service-button h2 {
+  color: #252525;
+  font-size: 22px;
+  font-weight: 750;
+  margin: 0 0 10px;
+}
+
+.service-button p {
+  color: #707070;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.service-button > span {
+  display: inline-block;
+  margin-top: 20px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 750;
+  transition: color 0.2s ease;
+}
+
+.service-button:hover > span {
+  color: #ea580c;
+}
+
+/* PRODUCT DETAILS */
+
+.service-details {
+  border-top: 1px solid #eeeeee;
+  margin-top: 24px;
+  padding-top: 22px;
+  animation: showDetails 0.3s ease;
+}
+
+.service-details h3 {
+  color: #252525;
+  font-size: 19px;
+  margin: 0 0 18px;
+}
+
+/* PRODUCTS GRID */
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* PRODUCT CARD */
+
+.mini-product {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  overflow: hidden;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mini-product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* PRODUCT IMAGE */
+
+.mini-product img {
+  display: block;
+  width: 100%;
+  height: 155px;
+  object-fit: contain;
+  object-position: center;
+  padding: 8px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+/* PRODUCT INFORMATION */
+
+.mini-product h4 {
+  color: #252525;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+  margin: 13px 0 5px;
+}
+
+.mini-product p {
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 4px 0 10px;
+}
+
+.mini-product strong {
+  display: block;
+  color: #f97316;
+  font-size: 17px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* ANIMATION */
+
+@keyframes showDetails {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .services-page {
+    padding: 50px 20px 65px;
+  }
+
+  .services-grid {
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 22px;
+  }
+
+  .mini-product img {
+    height: 140px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .services-page {
+    padding: 40px 16px 55px;
+  }
+
+  .services-hero {
+    margin-bottom: 35px;
+  }
+
+  .services-hero h1 {
+    font-size: 34px;
+  }
+
+  .services-hero p {
+    font-size: 14px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 22px;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .mini-product {
+    padding: 9px;
+  }
+
+  .mini-product img {
+    height: 125px;
+  }
+
+  .mini-product h4 {
+    font-size: 13px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-product img {
+    height: 180px;
+  }
+}

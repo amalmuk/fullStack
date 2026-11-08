@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { authGuard } from './guards/auth.guard';
@@ -9,6 +8,13 @@ export const routes: Routes = [
     component: Home,
     canActivate: [authGuard],
     title: 'Home | FullStackPro',
+  },
+  {
+    path: 'services',
+    loadComponent: () =>
+      import('./pages/services/services').then((m) => m.Services),
+    canActivate: [authGuard],
+    title: 'Services | FullStackPro',
   },
   {
     path: 'login',

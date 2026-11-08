@@ -1,0 +1,322 @@
+ <main class="services-page">
+
+  <!-- HERO SECTION -->
+  <section class="services-hero">
+
+    <span class="section-label">NOTRE COLLECTION</span>
+
+    <h1>Nos catégories de produits</h1>
+
+    <p>
+      Découvrez notre sélection d'accessoires pour smartphones
+      et profitez de produits de qualité à des prix avantageux.
+    </p>
+
+  </section>
+
+
+  <!-- SERVICES GRID -->
+  <section class="services-grid">
+
+    <!-- PHONE CASES -->
+    <article class="feature-card">
+
+      <button
+        type="button"
+        class="service-button"
+        (click)="toggleService('cases')"
+      >
+
+        <div class="feature-icon">📱</div>
+
+        <h2>Coques de téléphone</h2>
+
+        <p>Protégez votre smartphone avec élégance.</p>
+
+        <span>
+          {{ selectedService === 'cases' ? '− Fermer les détails' : '+ Voir les produits' }}
+        </span>
+
+      </button>
+
+
+      <div class="service-details" *ngIf="selectedService === 'cases'">
+
+        <h3>Notre collection de coques</h3>
+
+        <div class="product-list">
+
+          <div class="mini-product">
+            <img
+              src="/products/cases/case1.jpg"
+              alt="Coque en silicone"
+            >
+            <h4>Coque en silicone</h4>
+            <p>Protection souple et design élégant.</p>
+            <strong>29 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/cases/case2.jpg"
+              alt="Coque transparente"
+            >
+            <h4>Coque transparente</h4>
+            <p>Un style simple et raffiné.</p>
+            <strong>25 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/cases/case3.jpg"
+              alt="Coque design"
+            >
+            <h4>Coque design</h4>
+            <p>Un look moderne et original.</p>
+            <strong>32 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/cases/case4.jpg"
+              alt="Coque en cuir"
+            >
+            <h4>Coque en cuir</h4>
+            <p>Une protection élégante au quotidien.</p>
+            <strong>39 DT</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- CHARGERS AND CABLES -->
+    <article class="feature-card">
+
+      <button
+        type="button"
+        class="service-button"
+        (click)="toggleService('chargers')"
+      >
+
+        <div class="feature-icon">🔌</div>
+
+        <h2>Chargeurs et câbles</h2>
+
+        <p>Des accessoires de recharge rapides et fiables.</p>
+
+        <span>
+          {{ selectedService === 'chargers' ? '− Fermer les détails' : '+ Voir les produits' }}
+        </span>
+
+      </button>
+
+
+      <div class="service-details" *ngIf="selectedService === 'chargers'">
+
+        <h3>Notre collection de chargeurs</h3>
+
+        <div class="product-list">
+
+          <div class="mini-product">
+            <img
+              src="/products/chargers/charger1.jpg"
+              alt="Chargeur rapide"
+            >
+            <h4>Chargeur rapide</h4>
+            <p>Une recharge rapide et efficace.</p>
+            <strong>45 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/chargers/charger2.jpg"
+              alt="Câble USB-C"
+            >
+            <h4>Câble USB-C</h4>
+            <p>Un câble de recharge résistant.</p>
+            <strong>15 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/chargers/charger3.jpg"
+              alt="Câble Lightning"
+            >
+            <h4>Câble Lightning</h4>
+            <p>Une connexion fiable au quotidien.</p>
+            <strong>20 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/chargers/charger4.jpg"
+              alt="Chargeur sans fil"
+            >
+            <h4>Chargeur sans fil</h4>
+            <p>Une recharge pratique sans câble.</p>
+            <strong>55 DT</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- AUDIO ACCESSORIES -->
+    <article class="feature-card">
+
+      <button
+        type="button"
+        class="service-button"
+        (click)="toggleService('audio')"
+      >
+
+        <div class="feature-icon">🎧</div>
+
+        <h2>Accessoires audio</h2>
+
+        <p>Profitez d'une expérience sonore de qualité.</p>
+
+        <span>
+          {{ selectedService === 'audio' ? '− Fermer les détails' : '+ Voir les produits' }}
+        </span>
+
+      </button>
+
+
+      <div class="service-details" *ngIf="selectedService === 'audio'">
+
+        <h3>Notre collection audio</h3>
+
+        <div class="product-list">
+
+          <div class="mini-product">
+            <img
+              src="/products/audio/audio1.jpg"
+              alt="Écouteurs sans fil"
+            >
+            <h4>Écouteurs sans fil</h4>
+            <p>Musique et appels sans fil.</p>
+            <strong>65 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/audio/audio2.jpg"
+              alt="Casque audio"
+            >
+            <h4>Casque audio</h4>
+            <p>Un confort d'écoute optimal.</p>
+            <strong>85 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/audio/audio3.jpg"
+              alt="Écouteurs filaires"
+            >
+            <h4>Écouteurs filaires</h4>
+            <p>Un son clair et une connexion simple.</p>
+            <strong>25 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/audio/audio4.jpg"
+              alt="Enceinte portable"
+            >
+            <h4>Enceinte portable</h4>
+            <p>Emportez votre musique partout.</p>
+            <strong>75 DT</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- POWER BANKS -->
+    <article class="feature-card">
+
+      <button
+        type="button"
+        class="service-button"
+        (click)="toggleService('powerbanks')"
+      >
+
+        <div class="feature-icon">🔋</div>
+
+        <h2>Batteries externes</h2>
+
+        <p>Gardez vos appareils chargés où que vous soyez.</p>
+
+        <span>
+          {{ selectedService === 'powerbanks' ? '− Fermer les détails' : '+ Voir les produits' }}
+        </span>
+
+      </button>
+
+
+      <div class="service-details" *ngIf="selectedService === 'powerbanks'">
+
+        <h3>Notre collection de batteries externes</h3>
+
+        <div class="product-list">
+
+          <div class="mini-product">
+            <img
+              src="/products/powerbanks/powerbank1.jpg"
+              alt="Batterie externe 10 000 mAh"
+            >
+            <h4>Batterie externe 10 000 mAh</h4>
+            <p>Une recharge portable et compacte.</p>
+            <strong>55 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/powerbanks/powerbank2.jpg"
+              alt="Batterie externe 20 000 mAh"
+            >
+            <h4>Batterie externe 20 000 mAh</h4>
+            <p>Une capacité supplémentaire pour vos appareils.</p>
+            <strong>85 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/powerbanks/powerbank3.jpg"
+              alt="Batterie externe sans fil"
+            >
+            <h4>Batterie externe sans fil</h4>
+            <p>Une recharge sans fil pratique.</p>
+            <strong>95 DT</strong>
+          </div>
+
+          <div class="mini-product">
+            <img
+              src="/products/powerbanks/powerbank4.jpg"
+              alt="Batterie externe compacte"
+            >
+            <h4>Batterie externe compacte</h4>
+            <p>Un format léger et facile à transporter.</p>
+            <strong>65 DT</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+</main>

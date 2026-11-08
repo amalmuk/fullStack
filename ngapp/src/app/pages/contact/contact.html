@@ -1,182 +1,218 @@
-<main class="contact-page">
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a routerLink="/" class="brand">
-      <span class="brand-icon">F</span>
-      FullStack TP
-    </a>
+ <main class="contact-page">
 
-    <div class="nav-links">
-      <a routerLink="/">Accueil</a>
-      <a routerLink="/login">Connexion</a>
-      <a routerLink="/contact" class="active">Contact</a>
+  <!-- HERO SECTION -->
+  <section class="contact-hero">
+    <div class="contact-container">
+
+      <span class="section-label">CONTACTEZ-NOUS</span>
+
+      <h1>Nous sommes à votre écoute.</h1>
+
+      <p>
+        Une question sur nos produits ou besoin d'assistance ?
+        Notre équipe est à votre disposition pour vous accompagner.
+      </p>
+
     </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <span class="eyebrow">CONTACTEZ-NOUS</span>
-
-    <h1>
-      Parlons de votre
-      <span>prochain projet.</span>
-    </h1>
-
-    <p>
-      Une question, une idée ou un projet ?
-      Envoyez-nous un message, nous serons ravis de vous répondre.
-    </p>
   </section>
 
-  <!-- Contact Content -->
-  <section class="contact-layout">
 
-    <!-- Contact Information -->
-    <aside class="contact-info">
-      <div class="info-content">
-        <span class="info-label">NOUS CONTACTER</span>
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-container contact-grid">
+
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+
+        <span class="section-label">NOS COORDONNÉES</span>
 
         <h2>Restons en contact.</h2>
 
-        <p class="info-description">
-          N'hésitez pas à nous écrire. Présentez-nous votre demande
-          et nous vous répondrons dès que possible.
+        <p class="contact-description">
+          Chez TeknoShop, votre satisfaction est notre priorité.
+          N'hésitez pas à nous contacter pour toute question
+          concernant nos produits ou nos services.
         </p>
 
-        <div class="info-item">
-          <span class="info-icon">✉️</span>
+
+        <!-- EMAIL -->
+        <div class="contact-info-card">
+
+          <div class="contact-icon">📧</div>
+
           <div>
-            <h3>E-mail</h3>
-            <p>Envoyez-nous votre demande via le formulaire.</p>
+            <h3>Adresse e-mail</h3>
+            <p>contact@teknoshop.com</p>
           </div>
+
         </div>
 
-        <div class="info-item">
-          <span class="info-icon">◷</span>
+
+        <!-- PHONE -->
+        <div class="contact-info-card">
+
+          <div class="contact-icon">📞</div>
+
           <div>
-            <h3>Disponibilité</h3>
-            <p>Nous traiterons votre demande dès que possible.</p>
+            <h3>Téléphone</h3>
+            <p>+216 25 487 235</p>
           </div>
+
         </div>
 
-        <div class="info-item">
-          <span class="info-icon">✓</span>
+
+        <!-- ADDRESS -->
+        <div class="contact-info-card">
+
+          <div class="contact-icon">📍</div>
+
           <div>
-            <h3>Votre projet</h3>
-            <p>Chaque question mérite une réponse adaptée.</p>
+            <h3>Adresse</h3>
+            <p>Tozeur, Tunisie</p>
           </div>
+
         </div>
+
+
+        <!-- CONTACT NOTE -->
+        <div class="contact-note">
+
+          <strong>TeknoShop</strong>
+
+          <p>
+            Découvrez des accessoires mobiles qui allient
+            qualité, modernité et prix accessibles.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="decorative-circle circle-one"></div>
-      <div class="decorative-circle circle-two"></div>
-    </aside>
 
-    <!-- Contact Form -->
-    <div class="form-card">
-      <div class="form-heading">
-        <h2>Envoyer un message</h2>
-        <p>Remplissez les champs ci-dessous.</p>
-      </div>
+      <!-- CONTACT FORM -->
+      <div class="contact-form-card">
 
-      <form (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
+        <span class="section-label">ÉCRIVEZ-NOUS</span>
 
-        <div class="form-group">
-          <label for="name">Nom complet <span>*</span></label>
+        <h2>Envoyez-nous un message</h2>
 
-          <input
-            id="name"
-            type="text"
-            name="name"
-            [(ngModel)]="name"
-            placeholder="Ex. : Amal Mabrouk"
-            autocomplete="name"
-            required
-            minlength="2"
-            #nameField="ngModel"
-          />
+        <p>
+          Remplissez le formulaire ci-dessous.
+          Nous serons ravis de répondre à votre demande.
+        </p>
 
-          @if (nameField.invalid && nameField.touched) {
-            <small class="field-error">
-              Veuillez saisir votre nom (2 caractères minimum).
-            </small>
-          }
-        </div>
 
-        <div class="form-group">
-          <label for="email">Adresse e-mail <span>*</span></label>
+        <form
+          (ngSubmit)="onSubmit()"
+          #contactForm="ngForm"
+          novalidate
+        >
 
-          <input
-            id="email"
-            type="email"
-            name="email"
-            [(ngModel)]="email"
-            placeholder="vous@exemple.com"
-            autocomplete="email"
-            required
-            email
-            #emailField="ngModel"
-          />
+          <!-- FULL NAME -->
+          <div class="form-group">
 
-          @if (emailField.invalid && emailField.touched) {
-            <small class="field-error">
-              Veuillez saisir une adresse e-mail valide.
-            </small>
-          }
-        </div>
+            <label for="name">Nom complet</label>
 
-        <div class="form-group">
-          <label for="message">Votre message <span>*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="name"
+              #nameInput="ngModel"
+              placeholder="Ex. : Jean Dupont"
+              required
+            >
 
-          <textarea
-            id="message"
-            name="message"
-            [(ngModel)]="message"
-            placeholder="Décrivez votre demande..."
-            rows="5"
-            required
-            minlength="10"
-            #messageField="ngModel"
-          ></textarea>
+            @if (nameInput.invalid && nameInput.touched) {
+              <small class="field-error">
+                Veuillez renseigner votre nom complet.
+              </small>
+            }
 
-          @if (messageField.invalid && messageField.touched) {
-            <small class="field-error">
-              Votre message doit contenir au moins 10 caractères.
-            </small>
-          }
-        </div>
+          </div>
 
-        @if (feedback) {
+
+          <!-- EMAIL -->
+          <div class="form-group">
+
+            <label for="email">Adresse e-mail</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="email"
+              #emailInput="ngModel"
+              placeholder="Ex. : nom@exemple.com"
+              required
+              email
+            >
+
+            @if (emailInput.invalid && emailInput.touched) {
+              <small class="field-error">
+                Veuillez saisir une adresse e-mail valide.
+              </small>
+            }
+
+          </div>
+
+
+          <!-- MESSAGE -->
+          <div class="form-group">
+
+            <label for="message">Votre message</label>
+
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="message"
+              #messageInput="ngModel"
+              placeholder="Décrivez votre demande..."
+              rows="6"
+              required
+              minlength="10"
+            ></textarea>
+
+            @if (messageInput.invalid && messageInput.touched) {
+              <small class="field-error">
+                Votre message doit contenir au moins 10 caractères.
+              </small>
+            }
+
+          </div>
+
+
+          <!-- FEEDBACK -->
           <div
-            class="feedback"
+            class="form-feedback"
             [class.success]="feedbackType === 'success'"
             [class.error]="feedbackType === 'error'"
-            role="status"
+            *ngIf="feedback"
           >
             {{ feedback }}
           </div>
-        }
 
-        <button
-          type="submit"
-          class="submit-button"
-          [disabled]="contactForm.invalid"
-        >
-          Envoyer le message
-          <span aria-hidden="true">→</span>
-        </button>
 
-        <p class="required-note">
-          <span>*</span> Champs obligatoires
-        </p>
+          <!-- SUBMIT BUTTON -->
+          <button
+            type="submit"
+            class="contact-submit"
+            [disabled]="contactForm.invalid"
+          >
+            Envoyer le message
+            <span>→</span>
+          </button>
 
-      </form>
+
+          <small class="form-note">
+            Tous les champs sont obligatoires.
+          </small>
+
+        </form>
+
+      </div>
+
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>
-  </footer>
 
 </main>

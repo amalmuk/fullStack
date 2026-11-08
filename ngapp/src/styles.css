@@ -48,3 +48,65 @@ a {
   outline: 3px solid #fb923c;
   outline-offset: 3px;
 }
+.service-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 45px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  color: #252525;
+}
+
+.service-page h1 {
+  color: #f07824;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service-page p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #666;
+}
+
+.service-page h2 {
+  margin-top: 30px;
+}
+
+.service-page li {
+  padding: 8px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 25px;
+  color: #f07824;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.feature-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #f07824;
+  font-weight: bold;
+}
+
+.products-action {
+  text-align: center;
+  margin-top: 30px;
+}
